@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neolink Recertification , Tiffany O<span style="color: var(--pink);">'</span>Keeffe</title>
+  <meta name="description" content="Replacing a manual, email-based user access review with a secure, scalable in-platform workflow for BNP Paribas Securities Services." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --greige: #f2ede8;
+      --greige-mid: #e8e1d9;
+      --greige-dark: #c8bfb4;
+      --ink: #1a1714;
+      --ink-soft: #4a4540;
+      --ink-muted: #8a837c;
+      --pink: #d4006b;
+      --pink-dark: #b3005a;
+      --pink-light: #f0407e;
+      --white: #faf8f5;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      background: rgba(250, 248, 245, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--greige-mid);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--pink); }
+
+    /* HERO */
+    .cs-hero {
+      padding: 10rem 4rem 0;
+      background: var(--ink);
+      color: var(--white);
+    }
+    .cs-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      padding-bottom: 4rem;
+    }
+    .hero-image {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .hero-image-placeholder {
+      width: 100%;
+      height: 480px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-image-placeholder span {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+    }
+    .cs-back {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: color 0.2s;
+    }
+    .cs-back:hover { color: var(--pink-light); }
+    .cs-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--pink-light);
+      margin-bottom: 1rem;
+    }
+    .cs-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    .cs-subtitle {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(250,248,245,0.7);
+      line-height: 1.8;
+    }
+
+    /* HERO CAROUSEL PLACEHOLDER */
+    .hero-carousel {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      margin: 4rem auto 0;
+      max-width: 1200px;
+    }
+    .hero-carousel-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+    .carousel-placeholder {
+      background: rgba(255,255,255,0.04);
+      height: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem;
+    }
+    .carousel-placeholder span {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      text-align: center;
+    }
+
+    /* AT A GLANCE */
+    .at-a-glance {
+      background: var(--greige);
+      border-bottom: 1px solid var(--greige-mid);
+    }
+    .at-a-glance-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .glance-item {
+      padding: 0 2rem 0 0;
+      border-right: 1px solid var(--greige-dark);
+    }
+    .glance-item:last-child { border-right: none; padding-right: 0; }
+    .glance-item:not(:first-child) { padding-left: 2rem; }
+    .glance-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 0.6rem;
+    }
+    .glance-value {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* CONTENT */
+    .cs-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 6rem 4rem;
+    }
+
+    .cs-section { margin-bottom: 6rem; }
+    .cs-section-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 1rem;
+    }
+    .cs-section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+    .cs-body {
+      font-size: 1rem;
+      color: var(--ink-soft);
+      line-height: 1.85;
+      font-weight: 300;
+    }
+    .cs-body p + p { margin-top: 1.25rem; }
+
+    .cs-footnote {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      border-top: 1px solid var(--greige-mid);
+      padding-top: 1rem;
+      margin-top: 1.5rem;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    /* STAT BLOCK */
+    .cs-stat-block {
+      background: var(--greige);
+      border-left: 3px solid var(--pink);
+      padding: 3rem 3.5rem;
+      margin: 3rem 0;
+    }
+    .cs-stat {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5rem;
+      font-weight: 700;
+      color: var(--pink);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .cs-stat-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .cs-pullquote {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.75;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--greige-dark);
+    }
+    .cs-pullquote cite {
+      display: block;
+      margin-top: 0.75rem;
+      font-size: 0.78rem;
+      font-style: normal;
+      font-weight: 500;
+      color: var(--ink-muted);
+      letter-spacing: 0.05em;
+    }
+.cs-pullquote-block {
+      background: var(--greige);
+      border-left: 3px solid var(--pink);
+      padding: 2.5rem 3rem;
+      margin: 3rem 0;
+    }
+    .cs-pullquote-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    .cs-pullquote-text::before {
+      content: '\201C';
+      font-size: 3rem;
+      line-height: 0;
+      vertical-align: -0.6rem;
+      color: var(--pink);
+      margin-right: 0.1rem;
+      font-style: normal;
+    }
+
+    .cs-pullquote-text::after {
+      content: '\201D';
+      font-size: 3rem;
+      line-height: 0;
+      vertical-align: -0.6rem;
+      color: var(--pink);
+      margin-right: 0.1rem;
+      font-style: normal;
+    }
+
+    /* FULL WIDTH IMAGE STACK */
+    .cs-img-stack { display: flex; flex-direction: column; gap: 3rem; margin-top: 2.5rem; }
+    .cs-img-block { background: var(--greige); padding: 2rem; }
+    .cs-img-block img, .cs-img-block video { width: 100%; height: auto; display: block; box-shadow: 0 4px 24px rgba(26,23,20,0.08); }
+    .cs-img-block .img-caption { margin-top: 1rem; }
+
+    /* PAIN POINTS */
+    .pain-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--greige-mid);
+      margin: 2rem 0;
+    }
+    .pain-point {
+      background: var(--white);
+      padding: 2rem;
+    }
+    .pain-point-title {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--pink);
+      display: inline-block;
+    }
+    .pain-point-desc {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* QUESTIONS GRID */
+    .questions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--greige-mid);
+      margin: 2rem 0;
+    }
+    .question-item {
+      background: var(--greige);
+      padding: 2rem;
+    }
+    .question-q {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--ink);
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+    .question-a {
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .question-a::before {
+      content: '→ ';
+      color: var(--pink);
+      font-weight: 500;
+    }
+
+    /* DESIGN DECISIONS */
+    .decision-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      background: var(--greige-mid);
+      margin: 2rem 0;
+    }
+    .decision-item {
+      background: var(--white);
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .decision-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--greige-dark);
+      line-height: 1;
+    }
+
+    .decision-title {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+    .decision-desc {
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    /* FUTURE PHASES */
+    .future-phases {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--greige-mid);
+      margin: 2rem 0;
+    }
+    .future-phase {
+      background: var(--white);
+      padding: 0;
+    }
+    .future-phase-img {
+      width: 100%;
+      height: 180px;
+      background: var(--greige-mid);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .future-phase-img span {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--greige-dark);
+      text-align: center;
+      padding: 0 1rem;
+    }
+    .future-phase-body { padding: 1.5rem; }
+    .future-phase-title {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+    }
+    .future-phase-desc {
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* IMAGE PLACEHOLDERS */
+    .img-placeholder {
+      width: 100%;
+      background: var(--greige-mid);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--greige-dark);
+    }
+    .img-placeholder span {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 0 1rem;
+    }
+    .img-placeholder--tall { height: 400px; }
+    .img-placeholder--medium { height: 300px; }
+    .img-placeholder--short { height: 220px; }
+
+    .img-caption {
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+      font-style: italic;
+      margin-top: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .img-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--greige-mid);
+      margin: 2rem 0;
+    }
+    .img-grid-2 > div { background: var(--white); }
+    .img-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--greige-mid);
+      margin: 2rem 0;
+    }
+    .img-grid-3 > div { background: var(--white); }
+    .img-grid-item { padding: 1rem; }
+    .img-grid-item .img-caption { margin-top: 0.5rem; }
+
+    /* SUBSECTION */
+    .cs-subsection { margin-bottom: 4rem; }
+    .cs-subsection-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--greige-mid);
+    }
+
+    /* OUTCOME */
+    .cs-outcome {
+      background: var(--ink);
+      color: var(--white);
+      padding: 5rem 4rem;
+      margin: 4rem -4rem -6rem;
+    }
+    .cs-outcome-inner { max-width: 800px; margin: 0 auto; }
+    .cs-outcome-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .cs-outcome-body {
+      font-size: 1rem;
+      color: rgba(250,248,245,0.72);
+      line-height: 1.85;
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+    .outcome-points {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      background: rgba(255,255,255,0.06);
+      margin-bottom: 3rem;
+    }
+    .outcome-point {
+      background: rgba(255,255,255,0.03);
+      padding: 2rem 2.5rem;
+      border-left: 3px solid var(--pink-light);
+    }
+    .outcome-point-title {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pink-light);
+      margin-bottom: 0.5rem;
+    }
+    .outcome-point-desc {
+      font-size: 0.95rem;
+      color: rgba(250,248,245,0.72);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+    .outcome-stat {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    .outcome-stat strong {
+      font-size: 3rem;
+      color: var(--pink-light);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    /* CLOSING QUOTE */
+    .cs-closing-quote {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 3rem;
+      margin-top: 3rem;
+    }
+    .cs-closing-quote-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      font-weight: 700;
+      color: rgba(250,248,245,0.85);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .cs-closing-quote-text::before {
+      content: '\201C';
+      font-size: 3rem;
+      line-height: 0;
+      vertical-align: -0.6rem;
+      color: var(--pink-light);
+      margin-right: 0.1rem;
+      font-style: normal;
+    }
+    .cs-closing-quote-cite {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--ink-muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* NEXT PROJECT */
+    .cs-next {
+      background: var(--greige);
+      padding: 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.2s;
+    }
+    .cs-next:hover { background: var(--greige-mid); }
+    .cs-next-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 0.5rem;
+    }
+    .cs-next-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .cs-next-arrow { font-size: 2rem; color: var(--pink); }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer p { font-size: 0.75rem; color: var(--ink-muted); letter-spacing: 0.05em; }
+
+    /* FADE UP */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    /* HAMBURGER */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 0.5rem;
+      background: none;
+      border: none;
+      z-index: 101;
+      position: relative;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--ink);
+      transition: all 0.3s ease;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 900px) {
+      .nav-hamburger { display: flex; }
+      .nav-links {
+        display: none !important;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        z-index: 99;
+        overflow: hidden;
+      }
+      .nav-links.open { display: flex !important; }
+      .nav-links a { font-size: 1.2rem !important; color: var(--ink) !important; letter-spacing: 0.1em; }
+      .hero-image img, .hero-image video { height: 280px; object-fit: cover; }
+      .img-grid-2, .img-grid-3 { grid-template-columns: 1fr !important; }
+
+      nav { padding: 1.25rem 2rem; }
+      .cs-hero { padding: 8rem 2rem 4rem; }
+      .cs-hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .at-a-glance-inner { grid-template-columns: 1fr; gap: 0; padding: 2rem; }
+      .glance-item { border-right: none; padding: 0 0 1.5rem; border-bottom: 1px solid var(--greige-dark); }
+      .glance-item:last-child { border-bottom: none; padding-bottom: 0; }
+      .glance-item:not(:first-child) { padding-left: 0; }
+      .cs-content { padding: 4rem 2rem; }
+      .pain-points, .questions-grid, .future-phases { grid-template-columns: 1fr; }
+      .img-grid-2 { grid-template-columns: 1fr; }
+      .hero-carousel-inner { grid-template-columns: 1fr; }
+      .decision-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .cs-outcome { margin: 4rem -2rem -4rem; padding: 4rem 2rem; }
+      .cs-next { padding: 3rem 2rem; flex-direction: column; align-items: flex-start; }
+      footer { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+
+  </style>
+</head>
+<body>
+  <script>
+    (function() {
+      const correct = 'funk-soul-brother';
+      const stored = sessionStorage.getItem('uam_auth');
+      if (stored !== correct) {
+        const attempt = prompt('This case study is password protected. Please enter the password:');
+        if (attempt !== correct) {
+          document.body.innerHTML = '';
+          window.location.href = '../index.html';
+        } else {
+          sessionStorage.setItem('uam_auth', correct);
+        }
+      }
+    })();
+  </script>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">Tiffany O<span style="color: var(--pink);">'</span>Keeffe</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#work">Work</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../playground.html">Playground</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <header class="cs-hero">
+    <div class="cs-hero-inner">
+      <div>
+        <a href="../index.html#work" class="cs-back">← All work</a>
+        <p class="cs-eyebrow">Enterprise UX · Fintech · Usability Testing</p>
+        <h1 class="cs-title">Neolink Recertification</h1>
+      </div>
+      <p class="cs-subtitle">Replacing a manual, email-based user access review with a secure, scalable in-platform workflow for BNP Paribas Securities Services.</p>
+    </div>
+    <div class="hero-image">
+      <img src="../images/uam-hero2.png" alt="Neolink Recertification" style="width:100%;height:480px;object-fit:cover;display:block;" />
+    </div>
+  </header>
+
+  <!-- AT A GLANCE -->
+  <div class="at-a-glance">
+    <div class="at-a-glance-inner">
+      <div class="glance-item">
+        <div class="glance-label">My Role</div>
+        <div class="glance-value">UX Lead. End-to-end, from user interviews and workshop facilitation through to wireframing, prototyping, and usability testing.</div>
+      </div>
+      <div class="glance-item">
+        <div class="glance-label">Team</div>
+        <div class="glance-value">Triad model with Program Manager and Tech Lead, with wider stakeholder engagement across data, digital, and client activation teams.</div>
+      </div>
+      <div class="glance-item">
+        <div class="glance-label">Impact</div>
+        <div class="glance-value">CSAT score of 6.0 out of 7.0 in usability testing. Rolled out globally to all Neolink clients Q1 2025.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="cs-content">
+
+    <!-- BACKGROUND -->
+    <div class="cs-section fade-up">
+      <p class="cs-section-label">Background</p>
+      <h2 class="cs-section-title">A critical compliance workflow, built for self-service.</h2>
+      <div class="cs-body">
+        <p>Neolink is the global client portal of BNP Paribas Securities Services, serving institutional clients including asset managers, banks, and financial institutions.</p>
+        <p>As UX Lead for Neolink's User Access Management module, I was responsible for a broad programme of work spanning multiple workstreams. This case study focuses on one of the most critical: designing an in-platform recertification workflow to replace a manual, email-based process with significant adoption challenges.</p>
+      </div>
+    </div>
+
+    <!-- THE PROBLEM -->
+    <div class="cs-section fade-up">
+      <p class="cs-section-label">The Problem</p>
+      <h2 class="cs-section-title">A compliance process that was almost impossible to complete independently.</h2>
+      <div class="cs-body">
+        <p>Client administrators were responsible for reviewing user access across their subscriptions* to the Neolink portal, but the <b>existing process wasn't set up for self-service</b>. A monthly system-generated report with user list and data that most found too technical to understand, combined with no enforcement mechanism, meant <b>reviews were rarely completed independently</b>.</p>
+        <p>The APAC region presented its own distinct challenges around KYC requirements , a separate workstream I also led, which will be documented in a future case study.</p>
+      </div>
+      <p class="cs-footnote">* A subscription refers to a client's licensed access to specific Neolink services. A client can have multiple subscriptions, each with their own set of users and access levels.</p>
+
+      <div class="cs-stat-block">
+        <div class="cs-stat">4 / 5</div>
+        <div class="cs-stat-text">clients we interviewed did not find the monthly system-generated report useful.</div>
+      </div>
+    </div>
+
+    <!-- DISCOVERY -->
+    <div class="cs-section fade-up">
+      <p class="cs-section-label">Discovery</p>
+      <h2 class="cs-section-title">Understanding the problem from both sides.</h2>
+      <div class="cs-body">
+        <p>To understand the problem from both sides, we conducted <b>interviews across two phases</b>. In Phase 1, we spoke with seven internal stakeholders: Neolink administrators, support staff, and client engagement, to understand how user management worked in practice and where the friction was. In Phase 2, we interviewed five clients to validate our internal findings and understand how they independently approached user access review.</p>
+        <p>Client administrators didn't always personally know all the users on their subscription, often involving line managers in the review process. Those who did engage with the monthly report adapted it to fit their own workflows. This told us that the recertification workflow needed to account for how client administrators actually worked in practice, and anticipate what would happen if they didn't complete their review at all.</p>
+      </div>
+      <div style="margin-top: 2rem;">
+        <img src="../images/uam-affinity.png" alt="Miro affinity mapping" style="width:100%;height:300px;object-fit:cover;display:block;" />
+        <p class="img-caption">Synthesizing interview findings across two phases: from internal stakeholders and clients.</p>
+      </div>
+    </div>
+
+    <!-- PAIN POINTS -->
+    <div class="cs-section fade-up">
+      <p class="cs-section-label">Pain Points</p>
+      <h2 class="cs-section-title">Three systemic problems the new workflow had to solve.</h2>
+      <div class="pain-points">
+        <div class="pain-point">
+          <div class="pain-point-title">No audit trail</div>
+          <p class="pain-point-desc">There was no way to verify whether client administrators had completed their user access reviews. While the monthly report met the regulatory requirement, it was impossible to track whether the reviews were acted upon.</p>
+        </div>
+        <div class="pain-point">
+          <div class="pain-point-title">Technical barriers</div>
+          <p class="pain-point-desc">Most clients and even some support staff found the monthly report too technical, limiting the effectiveness of the existing review process and reducing independent completion rates.</p>
+        </div>
+        <div class="pain-point">
+          <div class="pain-point-title">Support overload</div>
+          <p class="pain-point-desc">Support teams were spending disproportionate time handling user management requests that clients could do themselves, leaving less capacity for more critical issues.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cs-section fade-up">
+      <div class="cs-pullquote-block">
+        <p class="cs-pullquote-text">The number of requests is too high, in my opinion. One person per day dedicated to this activity (user management requests) makes no sense.</p>
+        <p class="cs-pullquote-cite">Sofia, Neolink Support Team</p>
+      </div>
+    </div>
+
+    <!-- MAPPING THE JOURNEY -->
+    <div class="cs-section fade-up">
+      <p class="cs-section-label">Mapping the Journey</p>
+      <h2 class="cs-section-title">Finding the loophole before development began.</h2>
+      <div class="cs-body">
+        <p>Mapping the recertification journey end-to-end revealed a critical gap in our first version. The flow accounted for client administrators who completed their review , but not for those who didn't. Identifying this early allowed the team to address it before development began.</p>
+      </div>
+
+      <div class="cs-img-stack" style="margin-top: 2rem;">
+        <div class="cs-img-block">
+          <img src="../images/uam-as-is.gif" alt="As-is journey" style="width:100%;height:auto;display:block;" />
+          <p class="img-caption">As-is journey. User access review was done off-platform and not enforced.</p>
+        </div>
+        <div class="cs-img-block">
+          <img src="../images/uam-to-be.gif" alt="V1 to-be journey with loophole identified" style="width:100%;height:auto;display:block;" />
+          <p class="img-caption">Loophole identified in Recertification Journey V1. What would happen if the client review was not completed within the campaign period?</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- DESIGN DECISIONS -->
+    <div class="cs-section fade-up" style="margin-top: 6rem;">
+      <p class="cs-section-label">Design Decisions</p>
+      <h2 class="cs-section-title">Guided, accountable, and impossible to leave incomplete.</h2>
+      <div class="cs-body" style="margin-bottom: 2rem;">
+        <p>The recertification workflow was designed to make the review process as guided and accountable as possible: for client administrators who needed to complete it, and for BNP Paribas, who needed to verify it was done.</p>
+      </div>
+
+      <div class="decision-list">
+        <div class="decision-item">
+          <div class="decision-number">01</div>
+          <div class="decision-content">
+            <div class="decision-title">Suggested decisions and 2-step interaction</div>
+            <p class="decision-desc">Renewal and revocation decisions are suggested based on each user's last connection date. If a client administrator doesn't actively review a user, the suggested decision stands at the deadline, closing the loophole identified in the V1 to-be journey. Administrators then explicitly mark each decision as reviewed, ensuring every choice is consciously made rather than passively accepted.</p>
+          </div>
+        </div>
+        <div class="decision-item">
+          <div class="decision-number">02</div>
+          <div class="decision-content">
+            <div class="decision-title">Streamlined user list</div>
+            <p class="decision-desc">Where the Admista report could list one user across dozens of rows, the recertification screen shows one row per user, surfacing only the information needed to make a confident approval or revocation decision. Usability testing confirmed clients had enough information to act.</p>
+          </div>
+        </div>
+        <div class="decision-item">
+          <div class="decision-number">03</div>
+          <div class="decision-content">
+            <div class="decision-title">Full audit trail</div>
+            <p class="decision-desc">All completed campaigns are stored as a full audit trail, showing when reviews were held, which administrator completed them, and what decisions were made. This gave both client administrators and BNP Paribas a shared record of review history, supporting internal accountability and regulatory compliance.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-img-stack" style="margin-top: 2rem;">
+        <div class="cs-img-block">
+          <img src="../images/uam-2-step.png" alt="2-step interaction" style="width:100%;height:auto;display:block;" />
+          <p class="img-caption">Suggested decisions and 2-step interaction</p>
+        </div>
+        <div class="cs-img-block">
+          <img src="../images/uam-new-list.png" alt="Streamlined user list" style="width:100%;height:auto;display:block;" />
+          <p class="img-caption">Streamlined user list, one row per user</p>
+        </div>
+        <div class="cs-img-block">
+          <img src="../images/uam-all-campaigns.png" alt="Full audit trail" style="width:100%;height:auto;display:block;" />
+          <p class="img-caption">All campaigns, full audit trail</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- OUTCOME -->
+    <div class="cs-outcome fade-up">
+      <div class="cs-outcome-inner">
+        <p class="cs-section-label" style="color: var(--pink-light);">Outcome</p>
+        <h2 class="cs-outcome-title">What the Admista report couldn't deliver, the platform now could.</h2>
+        <p class="cs-outcome-body">The recertification workflow gave BNP Paribas what the Admista report couldn't. A structured, in-platform process that made it easier for client administrators to review their users and gave the bank visibility into whether reviews were being completed.</p>
+
+        <div class="outcome-points">
+          <div class="outcome-point">
+            <div class="outcome-point-title">Full audit trail</div>
+            <p class="outcome-point-desc">All completed campaigns are stored with a full record of who reviewed what and when, giving both BNP Paribas and client administrators a shared history of review activity.</p>
+          </div>
+          <div class="outcome-point">
+            <div class="outcome-point-title">Simplified review process</div>
+            <p class="outcome-point-desc">The streamlined one-row-per-user interface replaced the dense, multi-row Admista report. Usability testing confirmed clients had enough information to make confident decisions.</p>
+          </div>
+          <div class="outcome-point">
+            <div class="outcome-point-title">Improved self-service</div>
+            <p class="outcome-point-desc">By bringing reviews in-platform with guided suggested decisions, client administrators could complete them independently, reducing reliance on support for routine user management.</p>
+          </div>
+        </div>
+
+        <div class="outcome-stat">
+          <strong>6.0 / 7.0</strong>
+          CSAT score in usability testing, strong for a compliance-driven workflow that added new responsibilities for client administrators. The feature was subsequently rolled out to all Neolink clients in Q1 2025.
+        </div>
+
+        <div class="cs-closing-quote">
+          <p class="cs-closing-quote-text">I was lucky enough to work with Tiffany on several UX design topics. We interviewed clients together and, by analysing their feedback, she proposed a reviewed experience of creating user access and simplified a much too complex interface. I appreciated the professionalism, the sense of listening, the relevance of the analysis, and the quality of the formalization provided by Tiffany.</p>
+          <p class="cs-closing-quote-cite">Anne-Laure Villanova, Program Manager, BNP Paribas</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- NEXT PROJECT -->
+  <a href="design-system.html" class="cs-next">
+    <div>
+      <div class="cs-next-label">Next project</div>
+      <div class="cs-next-title">Design System Management</div>
+    </div>
+    <div class="cs-next-arrow">→</div>
+  </a>
+
+  <footer>
+    <p>© 2026 Tiffany O<span style="color: var(--pink);">'</span>Keeffe</p>
+    <p>Senior Product Designer · Berlin</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinksList = document.querySelector('.nav-links');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        navLinksList.classList.toggle('open');
+      });
+      navLinksList.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('open');
+          navLinksList.classList.remove('open');
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>

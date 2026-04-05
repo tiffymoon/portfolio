@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mastercard Panels , Tiffany O<span style="color: var(--pink);">'</span>Keeffe</title>
+  <meta name="description" content="From static PowerPoint reports to a self-service analytics platform: helping Mastercard put data exploration in the hands of their clients." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --greige: #f2ede8;
+      --greige-mid: #e8e1d9;
+      --greige-dark: #c8bfb4;
+      --ink: #1a1714;
+      --ink-soft: #4a4540;
+      --ink-muted: #8a837c;
+      --pink: #d4006b;
+      --pink-dark: #b3005a;
+      --pink-light: #f0407e;
+      --white: #faf8f5;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      background: rgba(250, 248, 245, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--greige-mid);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--pink); }
+
+    /* HERO */
+    .cs-hero {
+      padding: 10rem 4rem 0;
+      background: var(--ink);
+      color: var(--white);
+    }
+    .cs-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      padding-bottom: 4rem;
+    }
+    .cs-back {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: color 0.2s;
+    }
+    .cs-back:hover { color: var(--pink-light); }
+    .cs-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--pink-light);
+      margin-bottom: 1rem;
+    }
+    .cs-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    .cs-subtitle {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(250,248,245,0.7);
+      line-height: 1.8;
+    }
+
+    /* HERO IMAGE */
+    .hero-image {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .hero-image-placeholder {
+      width: 100%;
+      height: 480px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-image-placeholder span {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* AT A GLANCE */
+    .at-a-glance {
+      background: var(--greige);
+      border-bottom: 1px solid var(--greige-mid);
+    }
+    .at-a-glance-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .glance-item {
+      padding: 0 2rem 0 0;
+      border-right: 1px solid var(--greige-dark);
+    }
+    .glance-item:last-child { border-right: none; padding-right: 0; }
+    .glance-item:not(:first-child) { padding-left: 2rem; }
+    .glance-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 0.6rem;
+    }
+    .glance-value {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* CONTENT */
+    .cs-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 6rem 4rem;
+    }
+
+    .cs-section { margin-bottom: 6rem; }
+    .cs-section-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 1rem;
+    }
+    .cs-section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+    .cs-body {
+      font-size: 1rem;
+      color: var(--ink-soft);
+      line-height: 1.85;
+      font-weight: 300;
+    }
+    .cs-body p + p { margin-top: 1.25rem; }
+
+    /* PAIN POINTS */
+    .pain-points {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      background: var(--greige-mid);
+      margin: 2rem 0;
+    }
+    .pain-point {
+      background: var(--white);
+      padding: 2rem;
+    }
+    .pain-point-title {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--pink);
+      display: inline-block;
+    }
+    .pain-point-desc {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* IMAGE PLACEHOLDERS */
+    .img-placeholder {
+      width: 100%;
+      background: var(--greige-mid);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .img-placeholder span {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--greige-dark);
+      text-align: center;
+      padding: 0 1rem;
+    }
+    .img-placeholder--tall { height: 420px; }
+    .img-placeholder--medium { height: 300px; }
+    .img-placeholder--short { height: 220px; }
+
+    .img-caption {
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+      font-style: italic;
+      margin-top: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .img-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--greige-mid);
+      margin: 2rem 0;
+    }
+    .img-grid-2 > div { background: var(--white); }
+    .img-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--greige-mid);
+      margin: 2rem 0;
+    }
+    .img-grid-3 > div { background: var(--white); }
+    .img-grid-item { padding: 1rem; }
+    .img-grid-item .img-caption { margin-top: 0.5rem; }
+
+    /* DESIGN CAROUSEL , full bleed */
+    .design-carousel {
+      background: var(--greige);
+      padding: 3rem 4rem;
+      margin: 2rem -4rem;
+    }
+    .design-carousel-inner {
+      max-width: 100%;
+    }
+    .design-carousel-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--greige-mid);
+    }
+    .design-carousel-item {
+      background: var(--white);
+      padding: 1rem;
+    }
+    .design-carousel-caption {
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+      font-style: italic;
+      margin-top: 1.5rem;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* SITEMAP */
+    .sitemap-block {
+      margin: 3rem 0;
+    }
+
+    /* OUTCOME POINTS */
+    .outcome-points {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      background: rgba(255,255,255,0.06);
+      margin: 2rem 0 3rem;
+    }
+    .outcome-point {
+      background: rgba(255,255,255,0.03);
+      padding: 2rem 2.5rem;
+      border-left: 3px solid var(--pink-light);
+    }
+    .outcome-point-title {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pink-light);
+      margin-bottom: 0.5rem;
+    }
+    .outcome-point-desc {
+      font-size: 0.95rem;
+      color: rgba(250,248,245,0.72);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* OUTCOME */
+    .cs-outcome {
+      background: var(--ink);
+      color: var(--white);
+      padding: 5rem 4rem;
+      margin: 4rem -4rem -6rem;
+    }
+    .cs-outcome-inner { max-width: 800px; margin: 0 auto; }
+    .cs-outcome-label { color: var(--pink-light); margin-bottom: 1rem; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; }
+    .cs-outcome-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 2rem;
+    }
+    .cs-outcome-body {
+      font-size: 1rem;
+      color: rgba(250,248,245,0.72);
+      line-height: 1.85;
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    /* CLOSING QUOTE */
+    .cs-closing-quote {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 3rem;
+      margin-top: 3rem;
+    }
+    .cs-closing-quote-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      font-weight: 700;
+      color: rgba(250,248,245,0.85);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .cs-closing-quote-text::before {
+      content: '\201C';
+      font-size: 3rem;
+      line-height: 0;
+      vertical-align: -0.6rem;
+      color: var(--pink-light);
+      margin-right: 0.1rem;
+      font-style: normal;
+    }
+    .cs-closing-quote-text::after {
+      content: '\201D';
+      font-size: 3rem;
+      line-height: 0;
+      vertical-align: -0.6rem;
+      color: var(--pink-light);
+      margin-right: 0.1rem;
+      font-style: normal;
+    }
+    .cs-closing-quote-cite {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--ink-muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* NEXT */
+    .cs-next {
+      background: var(--greige);
+      padding: 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.2s;
+    }
+    .cs-next:hover { background: var(--greige-mid); }
+    .cs-next-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 0.5rem; }
+    .cs-next-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--ink); }
+    .cs-next-arrow { font-size: 2rem; color: var(--pink); }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer p { font-size: 0.75rem; color: var(--ink-muted); letter-spacing: 0.05em; }
+
+    /* FADE UP */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* IMAGE */
+    .cs-img-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 2.5rem;
+}
+.cs-img-block {
+  background: var(--greige);
+  padding: 2rem;
+}
+.cs-img-block img,
+.cs-img-block video {
+  width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 0 4px 24px rgba(26,23,20,0.08);
+}
+.cs-img-block .img-caption {
+  margin-top: 1rem;
+}
+
+    /* RESPONSIVE */
+    /* HAMBURGER */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 0.5rem;
+      background: none;
+      border: none;
+      z-index: 101;
+      position: relative;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--ink);
+      transition: all 0.3s ease;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 900px) {
+      .nav-hamburger { display: flex; }
+      .nav-links {
+        display: none !important;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        z-index: 99;
+        overflow: hidden;
+      }
+      .nav-links.open { display: flex !important; }
+      .nav-links a { font-size: 1.2rem !important; color: var(--ink) !important; letter-spacing: 0.1em; }
+      .hero-image img, .hero-image video { height: 280px; object-fit: cover; }
+      .img-grid-2, .img-grid-3 { grid-template-columns: 1fr !important; }
+
+      nav { padding: 1.25rem 2rem; }
+      .cs-hero { padding: 8rem 2rem 0; }
+      .cs-hero-inner { grid-template-columns: 1fr; gap: 2rem; padding-bottom: 3rem; }
+      .at-a-glance-inner { grid-template-columns: 1fr; gap: 0; padding: 2rem; }
+      .glance-item { border-right: none; padding: 0 0 1.5rem; border-bottom: 1px solid var(--greige-dark); }
+      .glance-item:last-child { border-bottom: none; padding-bottom: 0; }
+      .glance-item:not(:first-child) { padding-left: 0; }
+      .cs-content { padding: 4rem 2rem; }
+      .pain-points, .img-grid-2, .img-grid-3 { grid-template-columns: 1fr; }
+      .design-carousel { margin: 2rem -2rem; padding: 2rem; }
+      .design-carousel-grid { grid-template-columns: 1fr; }
+      .hero-image-placeholder { height: 260px; }
+      .cs-outcome { margin: 4rem -2rem -4rem; padding: 4rem 2rem; }
+      .cs-next { padding: 3rem 2rem; flex-direction: column; align-items: flex-start; }
+      footer { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">Tiffany O<span style="color: var(--pink);">'</span>Keeffe</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#work">Work</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../playground.html">Playground</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <header class="cs-hero">
+    <div class="cs-hero-inner">
+      <div>
+        <a href="../index.html#work" class="cs-back">← All work</a>
+        <p class="cs-eyebrow">Interaction Design · Functional Specifications · Fintech</p>
+        <h1 class="cs-title">Mastercard Panels</h1>
+      </div>
+      <p class="cs-subtitle">From static PowerPoint reports to a self-service analytics platform , helping Mastercard put data exploration in the hands of their clients.</p>
+    </div>
+    <div class="hero-image">
+      <img src="../images/mastercard-hero2.png" alt="Mastercard Panels" style="width:100%;height:480px;object-fit:cover;display:block;" />
+    </div>
+  </header>
+
+  <!-- AT A GLANCE -->
+  <div class="at-a-glance">
+    <div class="at-a-glance-inner">
+      <div class="glance-item">
+        <div class="glance-label">My Role</div>
+        <div class="glance-value">UX Designer at RecommenderX, responsible for discovery workshops, functional specifications, and interaction design across the platform's core modules.</div>
+      </div>
+      <div class="glance-item">
+        <div class="glance-label">Team</div>
+        <div class="glance-value">Cross-functional. UX designers, engineers, product, and data teams at RecommenderX, working directly alongside Mastercard's product, data, and client representatives.</div>
+      </div>
+      <div class="glance-item">
+        <div class="glance-label">Impact</div>
+        <div class="glance-value">Built a self-service analytics platform replacing manual reporting, enabling Mastercard analysts to build reports digitally and clientst to independently explore consumer behavior data.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="cs-content">
+
+    <!-- BACKGROUND -->
+    <div class="cs-section fade-up">
+      <p class="cs-section-label">Background</p>
+      <h2 class="cs-section-title">Insights trapped inside a PowerPoint slide.</h2>
+      <div class="cs-body">
+        <p>Mastercard provided consumer behavior data to card issuers to support strategic decision-making. The insights were delivered as reports built manually in Excel and PowerPoint , a process that was time-consuming, error-prone, and offered clients no way to explore the data beyond what was already on the page.</p>
+      </div>
+    </div>
+
+    <!-- PAIN POINTS -->
+    <div class="cs-section fade-up">
+      <p class="cs-section-label">Pain Points</p>
+      <h2 class="cs-section-title">Manual, error-prone, and fragmented.</h2>
+      <div class="pain-points">
+        <div class="pain-point">
+          <div class="pain-point-title">Time-consuming process</div>
+          <p class="pain-point-desc">Reports were built manually in Excel and PowerPoint, taking several months to complete. Analysts spent more time constructing reports than analysing the data inside them.</p>
+        </div>
+        <div class="pain-point">
+          <div class="pain-point-title">Risk of human error</div>
+          <p class="pain-point-desc">Data was copied and pasted manually from market research sources into PowerPoint templates, increasing the risk of errors.</p>
+        </div>
+        <div class="pain-point">
+          <div class="pain-point-title">Restricted insights</div>
+          <p class="pain-point-desc">Clients were limited to the insights already included in their report. Any request to explore additional metrics meant contacting their Mastercard Advisor and waiting for the entire manual process to repeat.</p>
+        </div>
+        <div class="pain-point">
+          <div class="pain-point-title">No central repository</div>
+          <p class="pain-point-desc">Reports were distributed by email and sometimes printed. There was no single place to find them, and no reliable way to know which version was the most current.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DISCOVERY -->
+    <div class="cs-section fade-up">
+      <p class="cs-section-label">Discovery</p>
+      <h2 class="cs-section-title">Workshops that turned assumptions into decisions.</h2>
+      <div class="cs-body">
+        <p>We ran two full days of discovery workshops with the Mastercard team, who flew in from the US to work with us in person at RecommenderX in Ireland. Bringing together engineers, product managers, data specialists, and client representatives in the same room allowed us to make real-time decisions about what to prioritise for the MVP, what to park, and what was limited by technical constraints.</p>
+        <p>Following the workshops, we maintained regular calls to keep both teams aligned throughout the project.</p>
+      </div>
+      <div class="cs-img-stack" style="margin-top: 2rem;">
+  <div class="cs-img-block">
+    <img src="../images/mastercard-workshop.jpg" alt="Discovery workshop" style="width:100%;height:auto;display:block;" />
+    <p class="img-caption">Two days of discovery workshops with the Mastercard team in Dublin.</p>
+  </div>
+  <div class="cs-img-block">
+    <img src="../images/mastercard-journey.png" alt="Journey mapping" style="width:100%;height:auto;display:block;" />
+    <p class="img-caption">Journey mapping, tracing the end-to-end reporting experience.</p>
+  </div>
+  <div class="cs-img-block">
+    <img src="../images/mastercard-empathy.webp" alt="Empathy mapping" style="width:100%;height:auto;display:block;" />
+    <p class="img-caption">Empathy mapping, understanding analyst and client perspectives.</p>
+  </div>
+</div>
+    </div>
+
+    <!-- SPECIFICATIONS -->
+    <div class="cs-section fade-up">
+      <p class="cs-section-label">Specifications</p>
+      <h2 class="cs-section-title">A single source of truth that outlasted the project.</h2>
+      <div class="cs-body">
+        <p>Translating workshop outputs into something a cross-functional team could build from was one of the most critical parts of the project. I <b>owned the functional specifications across all modules</b>, moving from a Definition Launchpad that captured personas, module journeys, and requirements, to Detailed Specifications that left no interaction state, validation rule, or microcopy to interpretation.</p>
+        <p>Hosted on Confluence, <b>the specs became the single source of truth</b> for design, development, and QA, comprehensive enough that they were later used as the foundation for the training manual delivered to Mastercard alongside the finished platform.</p>
+      </div>
+      <div style="margin-top: 2rem;">
+        <img src="../images/mastercard-specs.png" alt="Detailed Specifications" style="width:100%;height:auto;object-fit:contain;display:block;" />
+        <p class="img-caption">I produced detailed specifications for all the modules, every element, state, and interaction rule documented.</p>
+      </div>
+    </div>
+
+    <!-- DESIGN -->
+    <div class="cs-section fade-up">
+      <p class="cs-section-label">Design</p>
+      <h2 class="cs-section-title">From whiteboard to production</h2>
+      <div class="cs-body">
+        <p>Interaction design was a collaborative effort across design, engineering, and data teams, working through whiteboard ideation sessions before moving into detailed design.</p>
+        <p>I was responsible for the interaction design across most modules, with primary ownership of the chart builder and report builder. Within the chart builder, I designed the toolbar controls that allowed analysts to configure and customise charts. In the report builder, I designed the sidebar thumbnail interaction, giving users a visual, navigable overview of their report structure.</p>
+        <p>All interface components were designed from scratch and validated by Mastercard's branding team before implementation.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DESIGN CAROUSEL , full bleed -->
+  <div class="design-carousel">
+    <div class="design-carousel-grid">
+      <div class="design-carousel-item">
+        <img src="../images/mastercard-dashboard.png" alt="Dashboard" style="width:100%;height:auto;object-fit:contain;display:block;" />
+      </div>
+      <div class="design-carousel-item">
+        <img src="../images/mastercard-chartbuilder.png" alt="Chart builder" style="width:100%;height:auto;object-fit:contain;display:block;" />
+      </div>
+      <div class="design-carousel-item">
+        <img src="../images/mastercard-reportbuilder.png" alt="Report builder" style="width:100%;height:auto;object-fit:contain;display:block;" />
+      </div>
+    </div>
+    <p class="design-carousel-caption">Mastercard Panels, a greenfield, multi-module self-service analytics platform.</p>
+  </div>
+
+  <div class="cs-content">
+
+    <!-- OUTCOME -->
+    <div class="cs-outcome fade-up">
+      <div class="cs-outcome-inner">
+        <p class="cs-outcome-label">Outcome</p>
+        <h2 class="cs-outcome-title">From manual reporting to self-service analytics</h2>
+
+        <div class="outcome-points">
+          <div class="outcome-point">
+            <div class="outcome-point-title">Automated data ingestion</div>
+            <p class="outcome-point-desc">Data was automatically ingested and dynamically updated chart and report templates, eliminating the months-long manual process of building reports from scratch.</p>
+          </div>
+          <div class="outcome-point">
+            <div class="outcome-point-title">Eliminated human error</div>
+            <p class="outcome-point-desc">By removing the need to manually copy and paste data from market research sources into PowerPoint, the platform eliminated a significant source of errors that had undermined report accuracy.</p>
+          </div>
+          <div class="outcome-point">
+            <div class="outcome-point-title">Self-service exploration</div>
+            <p class="outcome-point-desc">Clients no longer needed to contact their Mastercard Advisor to explore additional metrics or comparisons. With access to the Chart Builder and Report Builder, they could investigate the data independently and on their own timeline.</p>
+          </div>
+          <div class="outcome-point">
+            <div class="outcome-point-title">Central report library</div>
+            <p class="outcome-point-desc">Reports were stored in a built-in library accessible to both analysts and clients , replacing scattered email threads and printed copies with a single, reliable source of truth.</p>
+          </div>
+        </div>
+
+        <p class="cs-outcome-body">Prior to launch, usability testing conducted by an independent research consultancy with internal Mastercard employees validated the platform's core flows. The chart builder scored 4.1 out of 5, the highest of all modules tested. The functional specifications produced during the project were comprehensive enough to form the foundation of the training manual delivered to Mastercard alongside the finished platform.</p>
+
+        <div class="cs-closing-quote">
+          <p class="cs-closing-quote-text">She had a deep knowledge of the design process and on the projects we worked on she had excelled in all its stages, consistently improving the quality of our deliverables and providing great results to our customers. Tiffany led workshops on research phases, documented behaviours and flows and actively collaborated with managers, developers and the design team , whether to better understand the problems, to provide feedback, or to ensure implementation according to designs.</p>
+          <p class="cs-closing-quote-cite">Lucas Petes, Former Product Designer, RecommenderX</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- NEXT PROJECT -->
+  <a href="advise.html" class="cs-next">
+    <div>
+      <div class="cs-next-label">Back to start</div>
+      <div class="cs-next-title">Advise for Consumer Packaged Goods</div>
+    </div>
+    <div class="cs-next-arrow">→</div>
+  </a>
+
+  <footer>
+    <p>© 2026 Tiffany O<span style="color: var(--pink);">'</span>Keeffe</p>
+    <p>Senior Product Designer · Berlin</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinksList = document.querySelector('.nav-links');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        navLinksList.classList.toggle('open');
+      });
+      navLinksList.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('open');
+          navLinksList.classList.remove('open');
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>

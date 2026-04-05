@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Córas Design System , Tiffany O<span style="color: var(--pink);">'</span>Keeffe</title>
+  <meta name="description" content="Sole design owner of a design system powering 100+ applications at BNP Paribas Securities Services." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --greige: #f2ede8;
+      --greige-mid: #e8e1d9;
+      --greige-dark: #c8bfb4;
+      --ink: #1a1714;
+      --ink-soft: #4a4540;
+      --ink-muted: #8a837c;
+      --pink: #d4006b;
+      --pink-dark: #b3005a;
+      --pink-light: #f0407e;
+      --white: #faf8f5;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      background: rgba(250, 248, 245, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--greige-mid);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--pink); }
+
+    /* HERO */
+    .cs-hero {
+      padding: 10rem 4rem 0;
+      background: var(--ink);
+      color: var(--white);
+    }
+    .hero-image { max-width: 1200px; margin: 0 auto; }
+    .hero-image-placeholder {
+      width: 100%; height: 480px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-image-placeholder span {
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,0.25);
+    }
+    .cs-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      padding-bottom: 4rem;
+    }
+    .cs-back {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: color 0.2s;
+    }
+    .cs-back:hover { color: var(--pink-light); }
+    .cs-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--pink-light);
+      margin-bottom: 1rem;
+    }
+    .cs-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    .cs-subtitle {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(250,248,245,0.7);
+      line-height: 1.8;
+    }
+
+    /* HERO CAROUSEL */
+    .hero-carousel {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .hero-carousel-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+    .carousel-placeholder {
+      background: rgba(255,255,255,0.04);
+      height: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem;
+    }
+    .carousel-placeholder span {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      text-align: center;
+    }
+
+    /* AT A GLANCE */
+    .at-a-glance {
+      background: var(--greige);
+      border-bottom: 1px solid var(--greige-mid);
+    }
+    .at-a-glance-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .glance-item {
+      padding: 0 2rem 0 0;
+      border-right: 1px solid var(--greige-dark);
+    }
+    .glance-item:last-child { border-right: none; padding-right: 0; }
+    .glance-item:not(:first-child) { padding-left: 2rem; }
+    .glance-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 0.6rem;
+    }
+    .glance-value {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* CONTENT */
+    .cs-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 6rem 4rem;
+    }
+
+    .cs-section { margin-bottom: 6rem; }
+    .cs-section-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 1rem;
+    }
+    .cs-section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+    .cs-body {
+      font-size: 1rem;
+      color: var(--ink-soft);
+      line-height: 1.85;
+      font-weight: 300;
+    }
+    .cs-body p + p { margin-top: 1.25rem; }
+
+    /* PULLQUOTE */
+    .cs-pullquote-block {
+      background: var(--greige);
+      border-left: 3px solid var(--pink);
+      padding: 2.5rem 3rem;
+      margin: 3rem 0;
+    }
+    .cs-pullquote-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    .cs-pullquote-text::before {
+      content: '\201C';
+      font-size: 3rem;
+      line-height: 0;
+      vertical-align: -0.6rem;
+      color: var(--pink);
+      margin-right: 0.1rem;
+      font-style: normal;
+    }
+    .cs-pullquote-cite {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--ink-muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* SUBSECTIONS */
+    .cs-subsection { margin-bottom: 4rem; }
+    .cs-subsection-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--greige-mid);
+    }
+
+    /* IMAGE PLACEHOLDERS */
+    .img-placeholder {
+      width: 100%;
+      background: var(--greige-mid);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .img-placeholder span {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--greige-dark);
+      text-align: center;
+      padding: 0 1rem;
+    }
+    .img-placeholder--tall { height: 400px; }
+    .img-placeholder--medium { height: 300px; }
+    .img-placeholder--short { height: 220px; }
+
+    .img-caption {
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+      font-style: italic;
+      margin-top: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .img-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--greige-mid);
+      margin: 2rem 0;
+    }
+    .img-grid-2 > div { background: var(--white); }
+    .img-grid-item { padding: 1rem; }
+    .img-grid-item .img-caption { margin-top: 0.5rem; }
+
+    /* STATS BLOCK */
+    .stats-block {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--greige-mid);
+      margin: 3rem 0;
+    }
+    .stat-item {
+      background: var(--white);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--pink);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+    .stat-desc {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* OUTCOME */
+    .cs-outcome {
+      background: var(--ink);
+      color: var(--white);
+      padding: 5rem 4rem;
+      margin: 4rem -4rem -6rem;
+    }
+    .cs-outcome-inner { max-width: 800px; margin: 0 auto; }
+    .cs-outcome-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 2rem;
+    }
+    .cs-outcome-body {
+      font-size: 1rem;
+      color: rgba(250,248,245,0.72);
+      line-height: 1.85;
+      font-weight: 300;
+    }
+
+    /* OUTCOME STATS */
+    .outcome-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      background: rgba(255,255,255,0.06);
+      margin: 3rem 0;
+    }
+    .outcome-stat-item {
+      background: rgba(255,255,255,0.03);
+      padding: 2rem 1.5rem;
+    }
+    .outcome-stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--pink-light);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .outcome-stat-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(250,248,245,0.6);
+      margin-bottom: 0.4rem;
+    }
+    .outcome-stat-desc {
+      font-size: 0.8rem;
+      color: rgba(250,248,245,0.4);
+      line-height: 1.5;
+      font-weight: 300;
+    }
+
+    /* FULL WIDTH IMAGE STACK */
+    .cs-img-stack { display: flex; flex-direction: column; gap: 3rem; margin-top: 2.5rem; }
+    .cs-img-block { background: var(--greige); padding: 2rem; }
+    .cs-img-block img, .cs-img-block video { width: 100%; height: auto; display: block; box-shadow: 0 4px 24px rgba(26,23,20,0.08); }
+    .cs-img-block .img-caption { margin-top: 1rem; }
+
+    /* NEXT PROJECT */
+    .cs-next {
+      background: var(--greige);
+      padding: 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.2s;
+    }
+    .cs-next:hover { background: var(--greige-mid); }
+    .cs-next-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 0.5rem;
+    }
+    .cs-next-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .cs-next-arrow { font-size: 2rem; color: var(--pink); }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer p { font-size: 0.75rem; color: var(--ink-muted); letter-spacing: 0.05em; }
+
+    /* FADE UP */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    /* HAMBURGER */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 0.5rem;
+      background: none;
+      border: none;
+      z-index: 101;
+      position: relative;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--ink);
+      transition: all 0.3s ease;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 900px) {
+      .nav-hamburger { display: flex; }
+      .nav-links {
+        display: none !important;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        z-index: 99;
+        overflow: hidden;
+      }
+      .nav-links.open { display: flex !important; }
+      .nav-links a { font-size: 1.2rem !important; color: var(--ink) !important; letter-spacing: 0.1em; }
+      .hero-image img, .hero-image video { height: 280px; object-fit: cover; }
+      .img-grid-2, .img-grid-3 { grid-template-columns: 1fr !important; }
+
+      nav { padding: 1.25rem 2rem; }
+      .cs-hero { padding: 8rem 2rem 0; }
+      .cs-hero-inner { grid-template-columns: 1fr; gap: 2rem; padding-bottom: 3rem; }
+      .at-a-glance-inner { grid-template-columns: 1fr; gap: 0; padding: 2rem; }
+      .glance-item { border-right: none; padding: 0 0 1.5rem; border-bottom: 1px solid var(--greige-dark); }
+      .glance-item:last-child { border-bottom: none; padding-bottom: 0; }
+      .glance-item:not(:first-child) { padding-left: 0; }
+      .cs-content { padding: 4rem 2rem; }
+      .img-grid-2 { grid-template-columns: 1fr; }
+      .hero-carousel-inner { grid-template-columns: 1fr; }
+      .stats-block, .outcome-stats { grid-template-columns: repeat(2, 1fr); }
+      .cs-outcome { margin: 4rem -2rem -4rem; padding: 4rem 2rem; }
+      .cs-next { padding: 3rem 2rem; flex-direction: column; align-items: flex-start; }
+      footer { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+
+  </style>
+</head>
+<body>
+  <script>
+    (function() {
+      const correct = 'block-rockin-beats';
+      const stored = sessionStorage.getItem('dsm_auth');
+      if (stored !== correct) {
+        const attempt = prompt('This case study is password protected. Please enter the password:');
+        if (attempt !== correct) {
+          document.body.innerHTML = '';
+          window.location.href = '../index.html';
+        } else {
+          sessionStorage.setItem('dsm_auth', correct);
+        }
+      }
+    })();
+  </script>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">Tiffany O<span style="color: var(--pink);">'</span>Keeffe</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#work">Work</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../playground.html">Playground</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <header class="cs-hero">
+    <div class="cs-hero-inner">
+      <div>
+        <a href="../index.html#work" class="cs-back">← All work</a>
+        <p class="cs-eyebrow">Design System · Enterprise UX · Data Visualisation</p>
+        <h1 class="cs-title">Córas Design System</h1>
+      </div>
+      <p class="cs-subtitle">Sole design owner of a design system powering 100+ applications at BNP Paribas Securities Services, governing components, versioning, documentation, and adoption across two development teams.</p>
+    </div>
+    <div class="hero-image">
+      <img src="../images/dsm-hero.png" alt="Córas Design System" style="width:100%;height:480px;object-fit:cover;display:block;" />
+    </div>
+  </header>
+
+  <!-- AT A GLANCE -->
+  <div class="at-a-glance">
+    <div class="at-a-glance-inner">
+      <div class="glance-item">
+        <div class="glance-label">My Role</div>
+        <div class="glance-value">Senior UX Designer. Sole design owner, responsible for governance, component creation, documentation, versioning, and stakeholder management.</div>
+      </div>
+      <div class="glance-item">
+        <div class="glance-label">Team</div>
+        <div class="glance-value">Cross-functional. Two development teams, product managers, client engagement, and senior stakeholders across Data and Digital Channels.</div>
+      </div>
+      <div class="glance-item">
+        <div class="glance-label">Impact</div>
+        <div class="glance-value">Grew adoption from 80+ to 100+ applications. Reduced support tickets by 14% despite 51% more applications in the system.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="cs-content">
+
+    <!-- BACKGROUND -->
+    <div class="cs-section fade-up">
+      <p class="cs-section-label">Background</p>
+      <h2 class="cs-section-title">Inheriting a system and making it scale.</h2>
+      <div class="cs-body">
+        <p>I had been using Córas as a product designer for a year before taking on sole design responsibility for the system. Inheriting a framework managed by several people over two years, I found solid governance foundations already in place but gaps in versioning, documentation, and component consistency that needed addressing.</p>
+        <p>This meant working closely with the two development teams, one building for Neolink, the global client portal, and one for transversal applications, to ensure design decisions translated accurately into the products teams relied on every day.</p>
+      </div>
+
+      <div class="cs-pullquote-block">
+        <p class="cs-pullquote-text">She was the UX Designer and her positive attitude to listen and also to advise were the main reasons for the project to be successful. She was also a very good communicator when it comes to explain UX choices.</p>
+        <p class="cs-pullquote-cite">Olivier Tran, Tech Lead, BNP Paribas Neolink Development Team</p>
+      </div>
+    </div>
+
+    <!-- CRAFT -->
+    <div class="cs-section fade-up">
+      <p class="cs-section-label">Craft</p>
+      <h2 class="cs-section-title">Filling the gaps, component by component.</h2>
+
+      <div class="cs-subsection">
+        <h3 class="cs-subsection-title">Data Visualisation Guidelines</h3>
+        <div class="cs-body">
+          <p>BNP Paribas products are heavily data-driven, but without shared standards, chart types were inconsistent and the existing data color palette was being misapplied across teams. I introduced data visualization guidelines covering chart selection based on the story the data needs to tell, and correct application of the existing palette , giving product teams a shared standard to work from.</p>
+        </div>
+        <div style="margin-top: 2rem;">
+          <img src="../images/dsm-dataviz.gif" alt="Data visualization guidelines" style="width:100%;height:auto;object-fit:contain;display:block;" />
+          <p class="img-caption">Data visualization guidelines, consistent standards for chart selection and data storytelling across BNP Paribas Securities Services products.</p>
+        </div>
+      </div>
+
+      <div class="cs-subsection">
+        <h3 class="cs-subsection-title">Mobile Components</h3>
+        <div class="cs-body">
+          <p>Córas had been built primarily for desktop. As product teams began building for mobile, I designed the first mobile components for the system: bottom navigation, carousel interactions, scrollable tabs, and data table pagination.</p>
+          <p>Rather than treating mobile as a separate concern, I designed the pagination component responsively, a single component that adapts its interaction model between desktop and mobile. The components were approved for development.</p>
+        </div>
+        <div style="margin-top: 2rem;">
+          <img src="../images/dsm-mobile.png" alt="Desktop and mobile pagination" style="width:100%;height:auto;object-fit:contain;display:block;" />
+          <p class="img-caption">Responsive pagination , a single component designed to adapt its interaction model across desktop and mobile.</p>
+        </div>
+      </div>
+
+      <div class="cs-subsection">
+        <h3 class="cs-subsection-title">Wireframing Toolkit</h3>
+        <div class="cs-body">
+          <p>A Córas study revealed that business analysts lacked access to specialist design tools and were struggling to communicate their ideas visually. I developed a wireframing toolkit in PowerPoint with wireframing principles, page templates, and a library of grab-and-go shapes aligned with Córas' visual language.</p>
+          <p>By meeting non-designers where they already were, I extended the design system's reach beyond the design team.</p>
+        </div>
+        <div style="margin-top: 2rem;">
+          <img src="../images/dsm-wireframing-toolkit.png" alt="Wireframing toolkit" style="width:100%;height:auto;object-fit:contain;display:block;" />
+          <p class="img-caption">Wireframing toolkit, empowering non-designers to communicate ideas using tools already available to them.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPERATIONS -->
+    <div class="cs-section fade-up">
+      <p class="cs-section-label">Operations</p>
+      <h2 class="cs-section-title">The work behind the work, running a system at scale.</h2>
+
+      <div class="cs-subsection">
+        <h3 class="cs-subsection-title">Versioning</h3>
+        <div class="cs-body">
+          <p>The component library I inherited had no versioning system; the file name stayed the same regardless of what changed, making it impossible for teams to know what had been updated or when. I introduced semantic versioning based on major, minor, and patch criteria, and developed a communication plan to support adoption across both development teams.</p>
+        </div>
+        <div style="margin-top: 2rem;">
+          <img src="../images/dsm-versioning.png" alt="New versioning framework communication plan" style="width:100%;height:auto;object-fit:contain;display:block;" />
+        </div>
+      </div>
+
+      <div class="cs-subsection">
+        <h3 class="cs-subsection-title">Contribution Process</h3>
+        <div class="cs-body">
+          <p>New and updated components entered Córas through a structured pipeline, reviewed in fortnightly management meetings with both development teams and stakeholders. I facilitated these sessions end-to-end, taking each proposal from idea to fully considered design, raising development tickets, reviewing implementation, and communicating updates post-release.</p>
+          <p>I managed over 40 component proposals through this full cycle.</p>
+        </div>
+        <div style="margin-top: 2rem;">
+          <img src="../images/dsm-governance.gif" alt="Governance process" style="width:100%;height:auto;object-fit:contain;display:block;" />
+          <p class="img-caption">Contribution process , sole design owner at every stage, from proposal through to production and post-release communication.</p>
+        </div>
+      </div>
+
+      <div class="cs-subsection">
+        <h3 class="cs-subsection-title">Communication Strategy</h3>
+        <div class="cs-body">
+          <p>Working with the Tech Lead, we maintained multiple channels to keep teams informed, the design system portal, MS Teams community, Jira board, and a monthly newsletter. I co-produced and edited the newsletter, covering component updates, upcoming releases, and interviews with developers and product teams on how they used Córas in practice.</p>
+        </div>
+        <div style="margin-top: 2rem;">
+          <img src="../images/dsm-portal.png" alt="Córas design system portal" style="width:100%;height:auto;object-fit:contain;display:block;" />
+        </div>
+      </div>
+
+      <div class="cs-subsection">
+        <h3 class="cs-subsection-title">Escalating Structural Risk</h3>
+        <div class="cs-body">
+          <p>I led quarterly steering committee meetings with senior stakeholders including the Head of Data and Digital, Head of Neolink, and Product Heads, covering budget, implementation updates, and issues and risks.</p>
+          <p>One risk I identified and escalated consistently: two separate development teams were implementing Córas independently, creating real potential for inconsistency, duplicated effort, and long-term maintenance problems across 100+ applications. Resolving it would require significant organisational change. I documented it, framed it clearly, and raised it at every Steer Co, ensuring a systemic design risk stayed visible at the right level of the organisation, not buried in a backlog.</p>
+        </div>
+        <div style="margin-top: 2rem;">
+          <img src="../images/dsm-steerco.png" alt="Quarterly Steer Co" style="width:100%;height:auto;object-fit:contain;display:block;" />
+          <p class="img-caption">Quarterly Steer Co, keeping senior stakeholders aligned on budget, implementation updates, and issues and risks.</p>
+        </div>
+      </div>
+
+      <div class="cs-subsection">
+        <h3 class="cs-subsection-title">Live Demo</h3>
+        <div class="cs-body">
+          <p>The portal previously displayed all component variations on a single page, overwhelming for developers trying to find what they needed. I proposed and led the integration of an interactive demo feature, defining all modifiers, attributes, and values for each component so developers could configure exactly what they needed and access the corresponding code directly.</p>
+        </div>
+        <div style="margin-top: 2rem;">
+          <img src="../images/dsm-live-demo.png" alt="Interactive demo" style="width:100%;height:auto;object-fit:contain;display:block;" />
+          <p class="img-caption">Interactive demo, modifiers panel with live preview and direct code access.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- OUTCOME -->
+    <div class="cs-outcome fade-up">
+      <div class="cs-outcome-inner">
+        <p class="cs-section-label" style="color: var(--pink-light);">Outcome</p>
+        <h2 class="cs-outcome-title">From 35 to 53 transversal applications , and a system reaching maturity.</h2>
+
+        <div class="outcome-stats">
+          <div class="outcome-stat-item">
+            <div class="outcome-stat-number">53</div>
+            <div class="outcome-stat-label">Transversal apps</div>
+            <div class="outcome-stat-desc">Up from 35 in 2022. Plus ~50 via Neolink, bringing total to 100+ across the organisation.</div>
+          </div>
+          <div class="outcome-stat-item">
+            <div class="outcome-stat-number">14%</div>
+            <div class="outcome-stat-label">Fewer tickets</div>
+            <div class="outcome-stat-desc">Despite 51% more applications in the system. Teams becoming self-sufficient.</div>
+          </div>
+          <div class="outcome-stat-item">
+            <div class="outcome-stat-number">42%</div>
+            <div class="outcome-stat-label">Improvement tickets</div>
+            <div class="outcome-stat-desc">Up from 34%. Teams focused on evolving the system, not fixing it.</div>
+          </div>
+          <div class="outcome-stat-item">
+            <div class="outcome-stat-number">16%</div>
+            <div class="outcome-stat-label">Support requests</div>
+            <div class="outcome-stat-desc">Down from 22%. Fewer teams struggling, more teams confident.</div>
+          </div>
+        </div>
+
+        <p class="cs-outcome-body">The decrease in support and bug tickets alongside growing adoption signals a design system reaching maturity. Teams were becoming more confident using Córas independently, shifting their focus from fixing problems to improving the system.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- NEXT PROJECT -->
+  <a href="mastercard.html" class="cs-next">
+    <div>
+      <div class="cs-next-label">Next project</div>
+      <div class="cs-next-title">Mastercard Panels</div>
+    </div>
+    <div class="cs-next-arrow">→</div>
+  </a>
+
+  <footer>
+    <p>© 2026 Tiffany O<span style="color: var(--pink);">'</span>Keeffe</p>
+    <p>Senior Product Designer · Berlin</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinksList = document.querySelector('.nav-links');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        navLinksList.classList.toggle('open');
+      });
+      navLinksList.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('open');
+          navLinksList.classList.remove('open');
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>
