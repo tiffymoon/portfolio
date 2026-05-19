@@ -355,5 +355,21 @@ footer p { font-size: 0.75rem; color: var(--ink-muted); letter-spacing: 0.05em; 
   .outcome-stats { grid-template-columns: repeat(2, 1fr); }
   .cs-outcome { margin: 4rem -2rem -4rem; padding: 4rem 2rem; }
   .cs-next { padding: 3rem 2rem; flex-direction: column; align-items: flex-start; }
-  footer { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+  .footer { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+  
+  /* Stack side-by-side images on mobile */
+.img-grid-2, .img-grid-3 { grid-template-columns: 1fr !important; }
+.full-bleed-grid { grid-template-columns: 1fr !important; }
+
+/* Reduce padding on image blocks */
+.cs-img-block { padding: 1rem; }
+.img-grid-item { padding: 0.5rem; }
+.design-carousel { padding: 1.5rem; }
+.design-carousel-grid { grid-template-columns: 1fr; }
+
+/* Stack nav gif and description on mobile */
+.cs-subsection .img-grid-2 { display: flex; flex-direction: column; }
+
+.nav-demo-layout { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+.nav-demo-layout > div:first-child { position: static !important; }
 }
