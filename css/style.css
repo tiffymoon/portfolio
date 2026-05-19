@@ -321,7 +321,7 @@ footer p { font-size: 0.75rem; color: var(--ink-muted); letter-spacing: 0.05em; 
   .nav-links a { font-size: 1.2rem !important; color: var(--ink) !important; letter-spacing: 0.1em; }
   .hero-content { padding: 0 2rem; }
   .hero-scroll { left: 2rem; }
-  .hero-image img, .hero-image video { height: 280px; object-fit: cover; }
+  .hero-image img, .hero-image video { aspect-ratio: 1 / 1; width: 100%; height: auto !important; object-fit: cover; object-position: center top; }
   .services { padding: 5rem 2rem; }
   .services-grid { grid-template-columns: 1fr; }
   .service-item { border-right: none; border-bottom: 1px solid var(--greige-dark); padding: 2.5rem 0; }
