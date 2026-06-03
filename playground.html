@@ -34,62 +34,58 @@
         <p class="page-eyebrow">Playground</p>
         <h1 class="page-title">Not everything<br>needs a <em>brief.</em></h1>
       </div>
-      <p class="page-intro">These are side projects I've built or am building to try something out or solve a problem I keep running into. Some are useful. Some are just fun.</p>
+      <p class="page-intro">Side projects I've built to try something out or solve a problem I keep running into. Some are useful. Some are just fun.</p>
     </div>
   </header>
 
   <div class="projects">
 
-    <!-- 01 HORT — image full width on top, text below -->
-    <div class="project">
-      <div class="project-header">
-        <span class="project-number">01</span>
-        <h2 class="project-title">Hort Activity Finder</h2>
+    <!-- 01 FIGMA TOKEN EXTRACTOR -->
+    <div class="project fade-up">
+      <h2 class="project-title">Figma Token Extractor Plugin</h2>
+      <div class="project-status live">Live</div>
+      <div class="project-img-full">
+        <img src="images/pg-token-extractor.gif" alt="Figma Token Extractor Plugin" />
       </div>
+
+      <p class="project-desc">Extracting design tokens from existing files is tedious work. This Figma plugin lets you select frames and export Tokens Studio-compatible JSON in one step, without manually hunting through components or guessing at values.</p>
+      <p class="project-desc">Built with Claude and VS Code using the Figma Plugin API.</p>
+
+      <div class="project-links">
+        <a href="https://github.com/tiffymoon/token-extractor" class="project-link" target="_blank">View on GitHub <span>↗</span></a>
+      </div>
+    </div>
+
+    <!-- 02 SCREENR -->
+    <div class="project fade-up">
+      <h2 class="project-title">Screenr Jobseeker Answer Bank</h2>
+      <div class="project-status live">Live</div>
+      <div class="project-img-full">
+        <img src="images/pg-screenr.png" alt="Screenr Jobseeker Answer Bank" />
+      </div>
+
+      <p class="project-desc">Screenr is a private answer bank for saving and reusing responses to supplemental application questions. Add a question, write your answer, tag it by topic, and find it again in seconds. Data stays in your browser, no account required.</p>
+      <p class="project-desc">Built with Lovable and Claude.</p>
+
+      <a href="https://screenr.tiffanyokeeffe.com" class="project-link" target="_blank">screenr.tiffanyokeeffe.com <span>↗</span></a>
+    </div> 
+
+    <!-- 03 HORT FINDER -->
+    <div class="project fade-up">
+      <h2 class="project-title">Community Calendar</h2>
       <div class="project-status live">Live</div>
 
       <div class="project-img-full">
-        <img src="images/pg-HortFinder.gif" alt="Hort Activity Finder" />
+        <img src="images/pg-HortFinder.gif" alt="Community Calendar" />
       </div>
 
-      <p class="project-desc">The Hort (aka after-school care) schedule at my child's school lives on a piece of paper on the Hort Rezeption wall. I thought I was the only one having a hard time finding Hort information online until I spoke to other parents during the PTA meeting.</p>
-      <p class="project-desc">I built Hort Activity Finder to help parents discover, filter, and register their kids for after-school activities. It also has an admin panel for managing event information. I showed this proof of concept to the school, which confirmed finding information is a known issue and was actually in the process of planning a website revamp.</p>
-      <p class="project-desc">The project is live on Lovable and open for others to fork and adapt for their own Hort or neighbourhood activities.</p>
-      <a href="https://school-activity-finder.lovable.app/" class="project-link" target="_blank">View on Lovable <span>↗</span></a>
+      <p class="project-desc">The after-school activity schedule at my child's school lived on a piece of paper pinned to the Hort Rezeption wall. After a PTA conversation confirmed I wasn't the only parent struggling to find this information, I built a two-sided platform: a parent-facing discovery and registration flow, and an admin panel for coordinators to manage listings. The school confirmed the problem was known and a website revamp was already being planned.</p>
+      <p class="project-desc">Built with Lovable and open for others to fork and adapt for their own <a href="https://service.berlin.de/dienstleistung/324901/">Hort/Ergänzende Förderung und Betreuung</a> or community programs.</p>
+
+      <a href="https://community-calendar.tiffanyokeeffe.com" class="project-link" target="_blank">community-calendar.tiffanyokeeffe.com <span>↗</span></a>
     </div>
 
-    <!-- 02 LUNCHBOX — portrait image right, text left -->
-    <div class="project">
-      <div class="project-header">
-        <span class="project-number">02</span>
-        <h2 class="project-title">Lunchbox Magic</h2>
-      </div>
-      <div class="project-status in-progress">In progress</div>
-
-      <div class="project-img-side">
-        <div>
-          <p class="project-desc">Packing a school lunchbox sounds simple until you're standing in the kitchen at 7:00am trying to remember what your kid will actually eat this week (we all know it can change), what's already been ignored too many times, and whether anyone in the class has a nut allergy.</p>
-          <p class="project-desc" style="margin-top:1rem;">This Lunchbox Generator takes the size of the box, dietary preferences, and any allergies, and gives you a filled lunchbox's worth of ideas. Users can generate lunchbox ideas for the day, plan for the week, rate suggestions for the future, and most importantly, choose whether or not a compartment can hold mixed food items.</p>
-        </div>
-        <img src="images/pg-lunchbox.gif" alt="Lunchbox Magic" />
-      </div>
-    </div>
-
-    <!-- 03 VOLLEYBALL — image full width on top, text below -->
-    <div class="project">
-      <div class="project-header">
-        <span class="project-number">03</span>
-        <h2 class="project-title">Volleyball Tournament Manager</h2>
-      </div>
-      <div class="project-status in-progress">In progress</div>
-
-      <div class="project-img-full">
-        <img src="images/pg-scoring-demo.gif" alt="Volleyball Tournament Manager" />
-      </div>
-
-      <p class="project-desc">A sports event management company I know runs volleyball tournaments using paper scoresheets. Results then have to be manually encoded into Google Sheets, formulas, standings, stats, before reports can go out to clients. That process takes at least a day, which means clients are waiting until Monday for results from a Saturday tournament.</p>
-      <p class="project-desc">The app handles tournament creation, team setup, and automatic match generation. During a match, scorekeepers tap a player and contextual action buttons appear, logging kills, attacks, or errors in one tap, while tracking and consolidating stats in real time.</p>
-    </div>
+    
 
   </div>
 
