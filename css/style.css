@@ -313,10 +313,15 @@ footer p { font-size: 0.75rem; color: var(--ink-muted); letter-spacing: 0.05em; 
 .cs-next-arrow { font-size: 2rem; color: var(--pink); }
 
 /* Page-specific components */
-.design-carousel { background: transparent; padding: 3rem 4rem; margin: 2rem -4rem; }
-.design-carousel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.design-carousel { background: transparent; padding: 1.5rem 4rem; margin: 0; }
+.cs-bleed { padding: 3rem 4rem; }
+.design-carousel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; }
 .design-carousel-item { background: transparent; padding: 0; }
 .design-carousel-caption { font-size: 0.78rem; color: var(--ink-muted); font-style: italic; margin-top: 1.5rem; text-align: center; line-height: 1.5; }
+/* tighten the space above and below the full-width image rows */
+.cs-content:has(+ .design-carousel) { padding-bottom: 0; }
+.cs-content:has(+ .design-carousel) > .cs-section:last-child { margin-bottom: 2rem; }
+.design-carousel + .cs-content { padding-top: 1rem; }
 .decision-list { display: flex; flex-direction: column; gap: 2px; background: var(--greige-mid); margin: 2rem 0; }
 .decision-item { background: var(--white); padding: 2.5rem; display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: start; }
 .decision-number { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; color: var(--greige-dark); line-height: 1; }
@@ -342,6 +347,9 @@ footer p { font-size: 0.75rem; color: var(--ink-muted); letter-spacing: 0.05em; 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   nav { padding: 1.25rem 2rem; }
+  nav.transparent.scrolled { padding: 1.25rem 2rem; }
+  .case-study { padding: 2rem 1.25rem; }
+  .cs-image { width: calc(100% + 2.5rem); margin: -2rem -1.25rem 0 -1.25rem; }
   nav.transparent { background: rgba(250,248,245,0.97); }
   nav.transparent .nav-logo { color: var(--ink) !important; }
   nav.transparent .nav-hamburger span { background: var(--ink) !important; }
@@ -372,21 +380,24 @@ footer p { font-size: 0.75rem; color: var(--ink-muted); letter-spacing: 0.05em; 
   .cs-hero { padding: 8rem 2rem 4rem; }
   .cs-hero-inner { grid-template-columns: 1fr; gap: 2rem; padding-bottom: 3rem; }
   .at-a-glance-inner { grid-template-columns: 1fr; gap: 0; padding: 2rem; }
-  .glance-item { border-right: none; padding: 0 0 1.5rem; border-bottom: 1px solid var(--greige-dark); }
+  .glance-item { border-right: none; padding: 0 0 1.5rem; border-bottom: none; }
   .glance-item:last-child { border-bottom: none; padding-bottom: 0; }
   .glance-item:not(:first-child) { padding-left: 0; }
   .cs-content { padding: 4rem 2rem; }
   .pain-points, .questions-grid, .future-phases { grid-template-columns: 1fr; }
+  .pain-points { gap: 0; background: transparent; }
   .img-grid-2, .img-grid-3 { grid-template-columns: 1fr !important; }
   .hero-carousel-inner { grid-template-columns: 1fr; }
   .decision-item { grid-template-columns: 1fr; gap: 0.5rem; }
-  .design-carousel { margin: 2rem -2rem; padding: 2rem; }
+  .design-carousel { margin: 0; padding: 1rem 2rem; }
+  .design-carousel-grid.eq-row { gap: 1.5rem; }
+  .cs-bleed { padding: 1.5rem 2rem; }
   .design-carousel-grid { grid-template-columns: 1fr; }
   .stats-block { grid-template-columns: repeat(2, 1fr); }
   .outcome-stats { grid-template-columns: repeat(2, 1fr); }
   .cs-outcome { margin: 4rem -2rem -4rem; padding: 4rem 2rem; }
   .cs-next { padding: 3rem 2rem; flex-direction: column; align-items: flex-start; }
-  .footer { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+  footer { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
   
   /* Stack side-by-side images on mobile */
 .img-grid-2, .img-grid-3 { grid-template-columns: 1fr !important; }
@@ -395,7 +406,7 @@ footer p { font-size: 0.75rem; color: var(--ink-muted); letter-spacing: 0.05em; 
 /* Reduce padding on image blocks */
 .cs-img-block { padding: 0; }
 .img-grid-item { padding: 0; }
-.design-carousel { padding: 1.5rem; }
+.design-carousel { padding: 1rem 2rem; }
 .design-carousel-grid { grid-template-columns: 1fr; }
 
 /* Stack nav gif and description on mobile */
@@ -415,3 +426,16 @@ img.zoomable:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px
 .lightbox-close:hover, .lightbox-close:focus-visible { background: rgba(250,248,245,0.12); }
 @media (max-width: 900px) { .lightbox { padding: 0.75rem; } }
 @media (prefers-reduced-motion: reduce) { .lightbox { transition: none; } }
+
+/* mobile: tighter padding inside boxes (page margins stay at 2rem) */
+@media (max-width: 900px) {
+  .pain-point { padding: 1.25rem 0; }
+  .question-item { padding: 1.25rem; }
+  .future-phase-body { padding: 1.25rem 0; }
+  .decision-item { padding: 1.5rem 0; }
+  .cs-quote, .cs-pullquote-block, .cs-stat-block { padding: 1.5rem 1.25rem; }
+  .outcome-point { padding: 1.25rem; }
+  .outcome-stat-item { padding: 1.25rem 1rem; }
+  .stat-item { padding: 1.5rem 1rem; }
+  .testimonial { padding: 1.5rem 0; }
+}
